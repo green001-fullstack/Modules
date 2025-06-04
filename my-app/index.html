@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple DApp</title>
+    <script type="module" src="src/main.js"></script>
+    <style>
+        body {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        button {
+            background-color: #4c4caf;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 10px 2px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:disabled {
+            background-color: #cccccc;
+            cursor: not-allowed;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+        }
+        .card {
+            background-color: #f9f9f9;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        #status {
+            margin-top: 20px;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .success {
+            background-color: #dff0d8;
+            color: #3c763d;
+        }
+        .error {
+            background-color: #f2dede;
+            color: #a94442;
+        }
+    </style>
+</head>
+<body>
+    <h1>My Wallet DApp</h1>
+    
+    <button id="connectButton">Connect Wallet</button>
+    
+    <div id="walletInfo" class="card" style="display: none;">
+        <h2>My Wallet </h2>
+        <p><strong>Connected Address:</strong> <span id="walletAddress"></span></p>
+        <p><strong>ETH Balance:</strong> <span id="walletBalance"></span></p>
+       
+        
+        <h3>Send ETH</h3>
+        <div>
+            <label>Recipient Address:</label>
+            <input type="text" id="recipient" >
+            
+            <label for="amount">Amount (ETH):</label>
+            <input type="number" id="amount">
+            
+            <button id="sendButton">Send Transaction</button>
+        </div>
+    </div>
+    
+    <div id="status"></div>
+</body>
+
+</html>
